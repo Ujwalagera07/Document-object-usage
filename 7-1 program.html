@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html><body>
+<h3>Document Object Demo</h3>
+<button onclick="demoDoc()">Show Document Info</button>
+<pre id="info"></pre>
+
+<script>
+function demoDoc() {
+    let info = '';
+    
+    // Properties
+    info += 'Title: ' + document.title + '\n';
+    info += 'URL: ' + document.URL + '\n';
+    info += 'Domain: ' + document.domain + '\n';
+    info += 'Body: ' + document.body.innerHTML.substring(0,50) + '...\n';
+    info += 'Links count: ' + document.links.length + '\n';
+    
+    // Methods
+    info += '\nMethods:\n';
+    document.title = 'Updated Title!';
+    info += 'Title changed to: ' + document.title + '\n';
+    
+    document.bgColor = '#e3f2fd';
+    info += 'Background changed to light blue\n';
+    
+    let p = document.createElement('p');
+    p.innerHTML = 'New paragraph created!';
+    document.body.appendChild(p);
+    info += 'New paragraph added\n';
+    
+    document.getElementById('info').textContent = info;
+}
+</script>
+</body></html>
